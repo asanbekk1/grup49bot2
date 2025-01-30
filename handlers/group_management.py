@@ -35,7 +35,7 @@ async def check_message_for_banned_words(message: types.Message):
                 await message.reply(f"Ошибка при попытке забанить пользователя: {e}")
             break
 
-@group_router.message(Command("бан"))
+@group_router.message(Command("ban"))
 async def ban_user_with_time(message: types.Message):
     if not message.from_user.id == message.chat.id:
         if message.reply_to_message:
